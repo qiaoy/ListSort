@@ -6,17 +6,23 @@
 //  Copyright © 2017年 qiaoyan. All rights reserved.
 //
 
-#import "AppDelegate.h"
+#import "QYAppDelegate.h"
+#import "QYMainNavigationController.h"
+#import "QYMainViewController.h"
 
-@interface AppDelegate ()
+@interface QYAppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation QYAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    QYMainViewController *mainVC = [[QYMainViewController alloc] init];
+    QYMainNavigationController *nav = [[QYMainNavigationController alloc] initWithRootViewController:mainVC];
+    self.window.rootViewController = nav;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 

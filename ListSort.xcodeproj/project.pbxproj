@@ -8,24 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		D40DC57C1E88B63C007048F8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D40DC57B1E88B63C007048F8 /* main.m */; };
-		D40DC57F1E88B63C007048F8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D40DC57E1E88B63C007048F8 /* AppDelegate.m */; };
-		D40DC5821E88B63C007048F8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D40DC5811E88B63C007048F8 /* ViewController.m */; };
-		D40DC5851E88B63C007048F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D40DC5831E88B63C007048F8 /* Main.storyboard */; };
+		D40DC57F1E88B63C007048F8 /* QYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D40DC57E1E88B63C007048F8 /* QYAppDelegate.m */; };
 		D40DC5871E88B63C007048F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D40DC5861E88B63C007048F8 /* Assets.xcassets */; };
 		D40DC58A1E88B63C007048F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D40DC5881E88B63C007048F8 /* LaunchScreen.storyboard */; };
+		D40DC5A31E8A6B32007048F8 /* QYMainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D40DC5A21E8A6B32007048F8 /* QYMainNavigationController.m */; };
+		D40DC5A71E8A6F16007048F8 /* QYListSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D40DC5A61E8A6F16007048F8 /* QYListSortViewController.m */; };
+		D40DC5AD1E8A6F59007048F8 /* QYMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D40DC5AC1E8A6F59007048F8 /* QYMainViewController.m */; };
+		D4D1FDAE1E8CDC7D00793179 /* QYFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D1FDAD1E8CDC7D00793179 /* QYFileManager.m */; };
+		D4D1FDB21E8CE4F400793179 /* QYTitleList.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4D1FDB11E8CE4F400793179 /* QYTitleList.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D40DC5771E88B63C007048F8 /* ListSort.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListSort.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D40DC57B1E88B63C007048F8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D40DC57D1E88B63C007048F8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		D40DC57E1E88B63C007048F8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		D40DC5801E88B63C007048F8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D40DC5811E88B63C007048F8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		D40DC5841E88B63C007048F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D40DC5861E88B63C007048F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D40DC57D1E88B63C007048F8 /* QYAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QYAppDelegate.h; sourceTree = "<group>"; };
+		D40DC57E1E88B63C007048F8 /* QYAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QYAppDelegate.m; sourceTree = "<group>"; };
+		D40DC5861E88B63C007048F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		D40DC5891E88B63C007048F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		D40DC58B1E88B63C007048F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D40DC58B1E88B63C007048F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		D40DC5A11E8A6B32007048F8 /* QYMainNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QYMainNavigationController.h; path = MainViewControllers/QYMainNavigationController.h; sourceTree = "<group>"; };
+		D40DC5A21E8A6B32007048F8 /* QYMainNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QYMainNavigationController.m; path = MainViewControllers/QYMainNavigationController.m; sourceTree = "<group>"; };
+		D40DC5A51E8A6F16007048F8 /* QYListSortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QYListSortViewController.h; path = ListSortViewController/QYListSortViewController.h; sourceTree = "<group>"; };
+		D40DC5A61E8A6F16007048F8 /* QYListSortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QYListSortViewController.m; path = ListSortViewController/QYListSortViewController.m; sourceTree = "<group>"; };
+		D40DC5AB1E8A6F59007048F8 /* QYMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QYMainViewController.h; path = MainViewControllers/QYMainViewController.h; sourceTree = "<group>"; };
+		D40DC5AC1E8A6F59007048F8 /* QYMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QYMainViewController.m; path = MainViewControllers/QYMainViewController.m; sourceTree = "<group>"; };
+		D4D1FDAC1E8CDC7D00793179 /* QYFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYFileManager.h; sourceTree = "<group>"; };
+		D4D1FDAD1E8CDC7D00793179 /* QYFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYFileManager.m; sourceTree = "<group>"; };
+		D4D1FDB11E8CE4F400793179 /* QYTitleList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = QYTitleList.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,14 +67,13 @@
 		D40DC5791E88B63C007048F8 /* ListSort */ = {
 			isa = PBXGroup;
 			children = (
-				D40DC57D1E88B63C007048F8 /* AppDelegate.h */,
-				D40DC57E1E88B63C007048F8 /* AppDelegate.m */,
-				D40DC5801E88B63C007048F8 /* ViewController.h */,
-				D40DC5811E88B63C007048F8 /* ViewController.m */,
-				D40DC5831E88B63C007048F8 /* Main.storyboard */,
-				D40DC5861E88B63C007048F8 /* Assets.xcassets */,
+				D40DC57D1E88B63C007048F8 /* QYAppDelegate.h */,
+				D40DC57E1E88B63C007048F8 /* QYAppDelegate.m */,
+				D40DC5A01E8A6A73007048F8 /* ListSortViewController */,
+				D40DC59F1E8A6A44007048F8 /* MainViewControllers */,
+				D4D1FDAB1E8CDC4200793179 /* QYManagers */,
+				D4D1FDB01E8CE44E00793179 /* Resources */,
 				D40DC5881E88B63C007048F8 /* LaunchScreen.storyboard */,
-				D40DC58B1E88B63C007048F8 /* Info.plist */,
 				D40DC57A1E88B63C007048F8 /* Supporting Files */,
 			);
 			path = ListSort;
@@ -77,6 +85,45 @@
 				D40DC57B1E88B63C007048F8 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D40DC59F1E8A6A44007048F8 /* MainViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D40DC5AB1E8A6F59007048F8 /* QYMainViewController.h */,
+				D40DC5AC1E8A6F59007048F8 /* QYMainViewController.m */,
+				D40DC5A11E8A6B32007048F8 /* QYMainNavigationController.h */,
+				D40DC5A21E8A6B32007048F8 /* QYMainNavigationController.m */,
+			);
+			name = MainViewControllers;
+			sourceTree = "<group>";
+		};
+		D40DC5A01E8A6A73007048F8 /* ListSortViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D40DC5A51E8A6F16007048F8 /* QYListSortViewController.h */,
+				D40DC5A61E8A6F16007048F8 /* QYListSortViewController.m */,
+			);
+			name = ListSortViewController;
+			sourceTree = "<group>";
+		};
+		D4D1FDAB1E8CDC4200793179 /* QYManagers */ = {
+			isa = PBXGroup;
+			children = (
+				D4D1FDAC1E8CDC7D00793179 /* QYFileManager.h */,
+				D4D1FDAD1E8CDC7D00793179 /* QYFileManager.m */,
+			);
+			path = QYManagers;
+			sourceTree = "<group>";
+		};
+		D4D1FDB01E8CE44E00793179 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D40DC58B1E88B63C007048F8 /* Info.plist */,
+				D40DC5861E88B63C007048F8 /* Assets.xcassets */,
+				D4D1FDB11E8CE4F400793179 /* QYTitleList.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +185,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D40DC58A1E88B63C007048F8 /* LaunchScreen.storyboard in Resources */,
+				D4D1FDB21E8CE4F400793179 /* QYTitleList.plist in Resources */,
 				D40DC5871E88B63C007048F8 /* Assets.xcassets in Resources */,
-				D40DC5851E88B63C007048F8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,8 +197,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D40DC5821E88B63C007048F8 /* ViewController.m in Sources */,
-				D40DC57F1E88B63C007048F8 /* AppDelegate.m in Sources */,
+				D40DC57F1E88B63C007048F8 /* QYAppDelegate.m in Sources */,
+				D40DC5A31E8A6B32007048F8 /* QYMainNavigationController.m in Sources */,
+				D40DC5AD1E8A6F59007048F8 /* QYMainViewController.m in Sources */,
+				D4D1FDAE1E8CDC7D00793179 /* QYFileManager.m in Sources */,
+				D40DC5A71E8A6F16007048F8 /* QYListSortViewController.m in Sources */,
 				D40DC57C1E88B63C007048F8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,14 +209,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D40DC5831E88B63C007048F8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D40DC5841E88B63C007048F8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D40DC5881E88B63C007048F8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -309,6 +351,7 @@
 				D40DC5901E88B63C007048F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
