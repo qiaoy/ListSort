@@ -9,6 +9,8 @@
 #import <Masonry/Masonry.h>
 #import "QYMainViewController.h"
 #import "QYTitleListViewModel.h"
+#import "QYListSortViewController.h"
+#import "QYMainNavigationController.h"
 
 @interface QYMainViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -31,7 +33,6 @@ static CGFloat const kFooterBtnH = 60;
     self.title = NSStringFromClass([self class]);
     self.listViewModel = [[QYTitleListViewModel alloc] init];
     [self setUpUI];
-    self.tableView.tableFooterView
 }
 
 #pragma mark - SetUp
@@ -41,6 +42,14 @@ static CGFloat const kFooterBtnH = 60;
     [self.tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
+}
+
+#pragma mark - Events
+
+- (void)footerBtnClick:(UIButton *)button {
+    QYListSortViewController *listSortVC = [[QYListSortViewController alloc] init];
+    QYMainNavigationController *nav = [[QYMainNavigationController alloc] initWithRootViewController:listSortVC];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 #pragma mark - UITableViewDataSource Delegate
@@ -83,6 +92,7 @@ static CGFloat const kFooterBtnH = 60;
         _footerBtn.bounds = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, kFooterBtnH);
         [_footerBtn setTitle:kFooterBtnTitle forState:UIControlStateNormal];
         [_footerBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        [_footerBtn addTarget:self action:@selector(footerBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _footerBtn;
 }
