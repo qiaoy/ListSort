@@ -10,15 +10,19 @@
 #import "QYMainViewController.h"
 #import "QYTitleListViewModel.h"
 
-@interface QYMainViewController () <UITableViewDataSource>
+@interface QYMainViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) QYTitleListViewModel *listViewModel;
 
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) UIButton *footerBtn;
 
 @end
 
 static NSString *const kTitleListCell = @"kTitleListCell";
+static NSString *const kFooterBtnTitle = @"调整列表顺序";
+
+static CGFloat const kFooterBtnH = 60;
 
 @implementation QYMainViewController
 
@@ -27,6 +31,7 @@ static NSString *const kTitleListCell = @"kTitleListCell";
     self.title = NSStringFromClass([self class]);
     self.listViewModel = [[QYTitleListViewModel alloc] init];
     [self setUpUI];
+    self.tableView.tableFooterView
 }
 
 #pragma mark - SetUp
@@ -50,15 +55,36 @@ static NSString *const kTitleListCell = @"kTitleListCell";
     return cell;
 }
 
+#pragma mark - UITableView Delegate
+
+- (__kindof UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    return self.footerBtn;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return kFooterBtnH;
+}
+
 #pragma mark - Getters
 
 - (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
         _tableView.dataSource = self;
+        _tableView.delegate = self;
         [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kTitleListCell];
     }
     return _tableView;
+}
+
+- (UIButton *)footerBtn {
+    if (!_footerBtn) {
+        _footerBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _footerBtn.bounds = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, kFooterBtnH);
+        [_footerBtn setTitle:kFooterBtnTitle forState:UIControlStateNormal];
+        [_footerBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    }
+    return _footerBtn;
 }
 
 - (void)didReceiveMemoryWarning {
