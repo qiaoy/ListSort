@@ -95,6 +95,8 @@
 				D40DC57E1E88B63C007048F8 /* QYAppDelegate.m */,
 				D40DC5A01E8A6A73007048F8 /* ListSortViewController */,
 				D40DC59F1E8A6A44007048F8 /* MainViewControllers */,
+				D4F474E11E8E1C8700422F2E /* Models */,
+				D4F474E21E8E1C8700422F2E /* ViewModels */,
 				D4D1FDAB1E8CDC4200793179 /* QYManagers */,
 				D4D1FDB01E8CE44E00793179 /* Resources */,
 				D40DC5881E88B63C007048F8 /* LaunchScreen.storyboard */,
@@ -148,6 +150,20 @@
 				D4D1FDB11E8CE4F400793179 /* QYTitleList.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		D4F474E11E8E1C8700422F2E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D4F474E21E8E1C8700422F2E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

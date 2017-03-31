@@ -6,9 +6,10 @@
 //  Copyright © 2017年 qiaoyan. All rights reserved.
 //
 
+#import <Masonry/Masonry.h>
 #import "QYMainViewController.h"
 
-@interface QYMainViewController ()
+@interface QYMainViewController () <UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
 
@@ -18,7 +19,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.title = NSStringFromClass([self class]);
+    [self setUpUI];
+}
+
+#pragma mark - SetUp
+
+- (void)setUpUI {
+    [self.view addSubview:self.tableView];
+    [self.tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
+}
+
+#pragma mark - UITableViewDataSource Delegate
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return nil;
 }
 
 #pragma mark - Getters
