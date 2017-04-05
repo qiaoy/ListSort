@@ -10,4 +10,6 @@
 
 @interface QYListSortViewController : UIViewController
 
+- (instancetype)initListSortViewControllerWithTitleList:(NSArray<NSString *> *)titleList;
+
 @end

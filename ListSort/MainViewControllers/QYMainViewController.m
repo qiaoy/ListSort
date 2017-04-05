@@ -48,7 +48,7 @@ static CGFloat const kFooterBtnH = 60;
 #pragma mark - Events
 
 - (void)footerBtnClick:(UIButton *)button {
-    QYListSortViewController *listSortVC = [[QYListSortViewController alloc] init];
+    QYListSortViewController *listSortVC = [[QYListSortViewController alloc] initListSortViewControllerWithTitleList:self.listViewModel.list];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:listSortVC];
     [self presentViewController:nav animated:YES completion:nil];
 }

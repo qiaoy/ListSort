@@ -10,6 +10,8 @@
 
 @interface QYListSortViewController () <UITableViewDataSource, UITableViewDelegate>
 
+@property (nonatomic, copy) NSArray<NSString *> *titleList;
+
 @property (nonatomic, strong) UITableView *tableView;
 
 @end
@@ -17,6 +19,15 @@
 static NSString *const kTitleListCell = @"kTitleListCell";
 
 @implementation QYListSortViewController
+
+#pragma mark - Life Circle
+
+- (instancetype)initListSortViewControllerWithTitleList:(NSArray<NSString *> *)titleList {
+    if (self = [super init]) {
+        self.titleList = titleList;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
