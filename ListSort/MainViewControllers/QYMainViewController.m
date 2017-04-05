@@ -30,6 +30,7 @@ static CGFloat const kFooterBtnH = 60;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationController.navigationBar.backgroundColor = [UIColor redColor];
     self.title = NSStringFromClass([self class]);
     self.listViewModel = [[QYTitleListViewModel alloc] init];
     [self setUpUI];
@@ -48,7 +49,7 @@ static CGFloat const kFooterBtnH = 60;
 
 - (void)footerBtnClick:(UIButton *)button {
     QYListSortViewController *listSortVC = [[QYListSortViewController alloc] init];
-    QYMainNavigationController *nav = [[QYMainNavigationController alloc] initWithRootViewController:listSortVC];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:listSortVC];
     [self presentViewController:nav animated:YES completion:nil];
 }
 
