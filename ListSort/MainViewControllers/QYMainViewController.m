@@ -30,7 +30,6 @@ static CGFloat const kFooterBtnH = 60;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.navigationBar.backgroundColor = [UIColor redColor];
     self.title = NSStringFromClass([self class]);
     self.listViewModel = [[QYTitleListViewModel alloc] init];
     [self setUpUI];

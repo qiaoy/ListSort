@@ -15,6 +15,7 @@
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UIButton *footerBtn;
+@property (nonatomic, strong) UIButton *rightButton;
 
 @end
 
@@ -48,6 +49,9 @@ static CGFloat const kFooterBtnH = 60;
     [self.tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
+    
+    UIBarButtonItem *rigthItem = [[UIBarButtonItem alloc] initWithCustomView:self.rightButton];
+    self.navigationItem.rightBarButtonItem = rigthItem;
 }
 
 #pragma mark - Events
@@ -99,6 +103,15 @@ static CGFloat const kFooterBtnH = 60;
         [_footerBtn addTarget:self action:@selector(footerBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _footerBtn;
+}
+
+- (UIButton *)rightButton {
+    if (!_rightButton) {
+        _rightButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 30)];
+        [_rightButton setTitle:@"完成" forState:UIControlStateNormal];
+        [_rightButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    }
+    return _rightButton;
 }
 
 @end
