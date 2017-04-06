@@ -52,6 +52,12 @@ static CGFloat const kFooterBtnH = 60;
     [self presentViewController:nav animated:YES completion:nil];
 }
 
+#pragma mark - QYListSortViewControllerDelegate
+
+- (void)resetTitleListOrderWithList:(NSArray<NSString *> *)list {
+    
+}
+
 #pragma mark - UITableViewDataSource Delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

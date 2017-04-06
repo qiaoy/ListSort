@@ -13,6 +13,7 @@
 @interface QYListSortViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, copy) NSArray<NSString *> *titleList;
+@property (nonatomic, strong) NSMutableArray<NSString *> *moveTitleList;
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UIButton *footerBtn;
@@ -32,6 +33,7 @@ static CGFloat const kFooterBtnH = 60;
 - (instancetype)initListSortViewControllerWithTitleList:(NSArray<NSString *> *)titleList {
     if (self = [super init]) {
         self.titleList = titleList;
+        self.moveTitleList = [titleList mutableCopy];
     }
     return self;
 }
@@ -63,6 +65,12 @@ static CGFloat const kFooterBtnH = 60;
     
 }
 
+- (void)rightButtonClick:(UIButton *)button {
+    if ([self.delegate respondsToSelector:@selector(resetTitleListOrderWithList:)]) {
+        [self.delegate resetTitleListOrderWithList:self.moveTitleList];
+    }
+}
+
 #pragma mark - UITableViewDataSource Delegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -71,7 +79,7 @@ static CGFloat const kFooterBtnH = 60;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     QYTitleListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kTitleListCell forIndexPath:indexPath];
-    [cell configTitleListTableViewCellWithTitle:self.titleList[indexPath.row]];
+    [cell configTitleListTableViewCellWithTitle:self.moveTitleList[indexPath.row]];
     return cell;
 }
 
@@ -80,7 +88,9 @@ static CGFloat const kFooterBtnH = 60;
 }
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
-    
+    NSString *title = self.moveTitleList[sourceIndexPath.row];
+    [self.moveTitleList removeObjectAtIndex:sourceIndexPath.row];
+    [self.moveTitleList insertObject:title atIndex:destinationIndexPath.row];
 }
 
 #pragma mark - UITableView Delegate
@@ -125,6 +135,7 @@ static CGFloat const kFooterBtnH = 60;
         _rightButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 30)];
         [_rightButton setTitle:@"完成" forState:UIControlStateNormal];
         [_rightButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        [_rightButton addTarget:self action:@selector(rightButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _rightButton;
 }

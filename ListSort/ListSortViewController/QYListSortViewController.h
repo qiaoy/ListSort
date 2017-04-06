@@ -8,8 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol QYListSortViewControllerDelegate;
+
+
 @interface QYListSortViewController : UIViewController
 
+@property (nonatomic, weak) id<QYListSortViewControllerDelegate> delegate;
+
 - (instancetype)initListSortViewControllerWithTitleList:(NSArray<NSString *> *)titleList;
+
+@end
+
+@protocol QYListSortViewControllerDelegate <NSObject>
+
+- (void)resetTitleListOrderWithList:(NSArray<NSString *> *)list;
 
 @end
