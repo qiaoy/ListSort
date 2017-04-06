@@ -69,6 +69,7 @@ static CGFloat const kFooterBtnH = 60;
     if ([self.delegate respondsToSelector:@selector(resetTitleListOrderWithList:)]) {
         [self.delegate resetTitleListOrderWithList:self.moveTitleList];
     }
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - UITableViewDataSource Delegate

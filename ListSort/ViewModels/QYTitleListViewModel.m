@@ -24,4 +24,8 @@
     return self;
 }
 
+- (void)resetListWith:(NSArray<NSString *> *)list {
+    self.list = list;
+}
+
 @end

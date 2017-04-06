@@ -12,4 +12,6 @@
 
 @property (nonatomic, readonly, copy) NSArray *list;
 
+- (void)resetListWith:(NSArray<NSString *> *)list;
+
 @end

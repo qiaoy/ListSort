@@ -12,7 +12,7 @@
 #import "QYListSortViewController.h"
 #import "QYMainNavigationController.h"
 
-@interface QYMainViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface QYMainViewController () <UITableViewDataSource, UITableViewDelegate, QYListSortViewControllerDelegate>
 
 @property (nonatomic, strong) QYTitleListViewModel *listViewModel;
 
@@ -48,6 +48,7 @@ static CGFloat const kFooterBtnH = 60;
 
 - (void)footerBtnClick:(UIButton *)button {
     QYListSortViewController *listSortVC = [[QYListSortViewController alloc] initListSortViewControllerWithTitleList:self.listViewModel.list];
+    listSortVC.delegate = self;
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:listSortVC];
     [self presentViewController:nav animated:YES completion:nil];
 }
@@ -55,7 +56,8 @@ static CGFloat const kFooterBtnH = 60;
 #pragma mark - QYListSortViewControllerDelegate
 
 - (void)resetTitleListOrderWithList:(NSArray<NSString *> *)list {
-    
+    [self.listViewModel resetListWith:list];
+    [self.tableView reloadData];
 }
 
 #pragma mark - UITableViewDataSource Delegate
