@@ -9,6 +9,7 @@
 #import <Masonry/Masonry.h>
 #import "QYListSortViewController.h"
 #import "QYTitleListTableViewCell.h"
+#import "QYFileManager.h"
 
 @interface QYListSortViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -60,9 +61,19 @@ static CGFloat const kFooterBtnH = 60;
 }
 
 #pragma mark - Events
-
+//default list order
 - (void)footerBtnClick:(UIButton *)button {
+    self.titleList = [QYFileManager defaultTitleList];
+    [self.titleList enumerateObjectsUsingBlock:^(NSString * _Nonnull title, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSString *moveTitle = [self.moveTitleList objectAtIndex:idx];
+        if (![title isEqualToString:moveTitle]) {
+            NSInteger moveIdx = [self.moveTitleList indexOfObject:title];
+            [self.tableView moveRowAtIndexPath:[NSIndexPath indexPathForRow:moveIdx inSection:0] toIndexPath:[NSIndexPath indexPathForRow:idx inSection:0]];
+            [self tableView:self.tableView moveRowAtIndexPath:[NSIndexPath indexPathForRow:moveIdx inSection:0] toIndexPath:[NSIndexPath indexPathForRow:idx inSection:0]];
+        }
+    }];
     
+    self.moveTitleList = [self.titleList mutableCopy];
 }
 
 - (void)rightButtonClick:(UIButton *)button {
