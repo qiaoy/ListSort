@@ -27,9 +27,9 @@ static CGFloat kPadding = 12.f;
 }
 
 - (void)setUpUI {
-    [self.contentView addSubview:self.titleLabel];
+    [self addSubview:self.titleLabel];
     [self.titleLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.contentView).insets(UIEdgeInsetsMake(kPadding, kPadding, kPadding, kPadding));
+        make.edges.equalTo(self).insets(UIEdgeInsetsMake(kPadding, kPadding, kPadding, kPadding));
     }];
 }
 

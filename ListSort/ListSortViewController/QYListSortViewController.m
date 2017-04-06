@@ -8,6 +8,7 @@
 
 #import <Masonry/Masonry.h>
 #import "QYListSortViewController.h"
+#import "QYTitleListTableViewCell.h"
 
 @interface QYListSortViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -40,6 +41,8 @@ static CGFloat const kFooterBtnH = 60;
     self.navigationController.navigationBar.backgroundColor = [UIColor redColor];
     self.title = NSStringFromClass([self class]);
     [self setUpUI];
+    
+    [self.tableView setEditing:YES animated:YES];
 }
 
 #pragma mark - SetUI
@@ -67,9 +70,17 @@ static CGFloat const kFooterBtnH = 60;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kTitleListCell forIndexPath:indexPath];
-    cell.textLabel.text = self.titleList[indexPath.row];
+    QYTitleListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kTitleListCell forIndexPath:indexPath];
+    [cell configTitleListTableViewCellWithTitle:self.titleList[indexPath.row]];
     return cell;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
+    
 }
 
 #pragma mark - UITableView Delegate
@@ -82,6 +93,10 @@ static CGFloat const kFooterBtnH = 60;
     return kFooterBtnH;
 }
 
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewCellEditingStyleNone;
+}
+
 #pragma mark - Getters
 
 - (UITableView *)tableView {
@@ -89,7 +104,7 @@ static CGFloat const kFooterBtnH = 60;
         _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
         _tableView.dataSource = self;
         _tableView.delegate = self;
-        [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kTitleListCell];
+        [_tableView registerClass:[QYTitleListTableViewCell class] forCellReuseIdentifier:kTitleListCell];
     }
     return _tableView;
 }
