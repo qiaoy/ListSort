@@ -15,6 +15,7 @@
 		D40DC5A31E8A6B32007048F8 /* QYMainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = D40DC5A21E8A6B32007048F8 /* QYMainNavigationController.m */; };
 		D40DC5A71E8A6F16007048F8 /* QYListSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D40DC5A61E8A6F16007048F8 /* QYListSortViewController.m */; };
 		D40DC5AD1E8A6F59007048F8 /* QYMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D40DC5AC1E8A6F59007048F8 /* QYMainViewController.m */; };
+		D43A91E11E9616F300A21E75 /* QYTitleListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D43A91E01E9616F300A21E75 /* QYTitleListTableViewCell.m */; };
 		D4D1FDAE1E8CDC7D00793179 /* QYFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D1FDAD1E8CDC7D00793179 /* QYFileManager.m */; };
 		D4D1FDB21E8CE4F400793179 /* QYTitleList.plist in Resources */ = {isa = PBXBuildFile; fileRef = D4D1FDB11E8CE4F400793179 /* QYTitleList.plist */; };
 		D4F474E51E8E210700422F2E /* QYTitleListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D4F474E41E8E210700422F2E /* QYTitleListViewModel.m */; };
@@ -36,6 +37,8 @@
 		D40DC5A61E8A6F16007048F8 /* QYListSortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QYListSortViewController.m; path = ListSortViewController/QYListSortViewController.m; sourceTree = "<group>"; };
 		D40DC5AB1E8A6F59007048F8 /* QYMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QYMainViewController.h; path = MainViewControllers/QYMainViewController.h; sourceTree = "<group>"; };
 		D40DC5AC1E8A6F59007048F8 /* QYMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QYMainViewController.m; path = MainViewControllers/QYMainViewController.m; sourceTree = "<group>"; };
+		D43A91DF1E9616F300A21E75 /* QYTitleListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYTitleListTableViewCell.h; sourceTree = "<group>"; };
+		D43A91E01E9616F300A21E75 /* QYTitleListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYTitleListTableViewCell.m; sourceTree = "<group>"; };
 		D4D1FDAC1E8CDC7D00793179 /* QYFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QYFileManager.h; sourceTree = "<group>"; };
 		D4D1FDAD1E8CDC7D00793179 /* QYFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QYFileManager.m; sourceTree = "<group>"; };
 		D4D1FDB11E8CE4F400793179 /* QYTitleList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = QYTitleList.plist; sourceTree = "<group>"; };
@@ -94,10 +97,10 @@
 		D40DC5791E88B63C007048F8 /* ListSort */ = {
 			isa = PBXGroup;
 			children = (
+				D43A91DD1E9616B400A21E75 /* Controllers */,
+				D43A91DE1E9616B400A21E75 /* Views */,
 				D40DC57D1E88B63C007048F8 /* QYAppDelegate.h */,
 				D40DC57E1E88B63C007048F8 /* QYAppDelegate.m */,
-				D40DC5A01E8A6A73007048F8 /* ListSortViewController */,
-				D40DC59F1E8A6A44007048F8 /* MainViewControllers */,
 				D4F474E11E8E1C8700422F2E /* Models */,
 				D4F474E21E8E1C8700422F2E /* ViewModels */,
 				D4D1FDAB1E8CDC4200793179 /* QYManagers */,
@@ -125,6 +128,7 @@
 				D40DC5A21E8A6B32007048F8 /* QYMainNavigationController.m */,
 			);
 			name = MainViewControllers;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		D40DC5A01E8A6A73007048F8 /* ListSortViewController */ = {
@@ -134,6 +138,25 @@
 				D40DC5A61E8A6F16007048F8 /* QYListSortViewController.m */,
 			);
 			name = ListSortViewController;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		D43A91DD1E9616B400A21E75 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D40DC5A01E8A6A73007048F8 /* ListSortViewController */,
+				D40DC59F1E8A6A44007048F8 /* MainViewControllers */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D43A91DE1E9616B400A21E75 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D43A91DF1E9616F300A21E75 /* QYTitleListTableViewCell.h */,
+				D43A91E01E9616F300A21E75 /* QYTitleListTableViewCell.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D4D1FDAB1E8CDC4200793179 /* QYManagers */ = {
@@ -294,6 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D43A91E11E9616F300A21E75 /* QYTitleListTableViewCell.m in Sources */,
 				D40DC57F1E88B63C007048F8 /* QYAppDelegate.m in Sources */,
 				D4F474E51E8E210700422F2E /* QYTitleListViewModel.m in Sources */,
 				D40DC5A31E8A6B32007048F8 /* QYMainNavigationController.m in Sources */,
